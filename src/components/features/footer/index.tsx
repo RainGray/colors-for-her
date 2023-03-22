@@ -1,14 +1,6 @@
 export const Footer = (): JSX.Element => {
   return (
-    <div
-      className="row"
-      style={{
-        justifyContent: "center",
-        alignItems: "center",
-        position: "fixed",
-        bottom: 0,
-      }}
-    >
+    <div className="footer">
       <p> made by Dad</p>
     </div>
   );

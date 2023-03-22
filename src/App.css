@@ -28,6 +28,22 @@
   color: blueviolet;
 }
 
+.layout {
+  display: flex; 
+  flex-direction: column;
+  height: 100vh; 
+}
+
 .main-section {
   background-color: coral;
+  flex: 1 0 auto;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: auto;
 }

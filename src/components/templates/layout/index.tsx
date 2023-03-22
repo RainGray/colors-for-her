@@ -5,7 +5,7 @@ import { MainMenu } from "../../features/mainMenu";
 import { MainSection } from "../../pages/mainSection";
 
 export const Layout = (): JSX.Element => (
-  <div className="column">
+  <div className="layout">
     <Header />
     <MainMenu />
     <MainSection>
