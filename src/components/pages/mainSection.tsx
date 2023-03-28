@@ -1,7 +1,10 @@
 export const MainSection: React.FC<{ children: React.ReactNode }> = (props) => {
   return (
-    <div className="main-section">
-      <p> Main Section </p>
+    <div
+      style={{
+        flex: "1 0 auto",
+      }}
+    >
       {props.children}
     </div>
   );

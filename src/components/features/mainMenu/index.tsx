@@ -3,7 +3,14 @@ import { MainMenuItem } from "./mainMenuItem";
 
 export const MainMenu = (): JSX.Element => {
   return (
-    <div className="row">
+    <div
+      className="row"
+      style={{
+        backgroundColor: "var(--color-primary-0)",
+        fontWeight: "bold",
+        color: "var(--color-secondary-1-4)",
+      }}
+    >
       <p> MainMenu</p>
       {mainViewDefinitions.map((mvd, i) => (
         <MainMenuItem

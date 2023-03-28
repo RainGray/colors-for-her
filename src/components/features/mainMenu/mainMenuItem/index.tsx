@@ -11,8 +11,13 @@ export const MainMenuItem: React.FC<{
   const navigate = useNavigate();
 
   return (
-    <div style={{ padding: 10 }} onClick={(): void => navigate(urlName)}>
-      <p style={{ color: isActive ? "#ffaaaa" : "#000000" }}> {name} </p>
+    <div
+      style={{ padding: 10, cursor: "pointer" }}
+      onClick={(): void => navigate(urlName)}
+    >
+      <p style={{ color: isActive ? "var(--color-secondary-1-2)" : "#000000" }}>
+        {name}
+      </p>
     </div>
   );
 };
