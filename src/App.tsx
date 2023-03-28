@@ -5,32 +5,14 @@ import { NotFound } from "./components/pages/notFound";
 import { useEffect, useState, createContext, useContext } from "react";
 import { ContextData } from "./models";
 
+
+
 function App() {
-  const [width, setWindowWidth] = useState(0);
-
-  const resizePoint = 800;
-  const context: ContextData = {
-    smallScreen: width < resizePoint,
-    screenWidth: width,
-  };
-  const AppContext = createContext(context);
-
-  useEffect(() => {
-    updateDimensions();
-
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
-
-  const updateDimensions = () => {
-    const width = window.innerWidth;
-    setWindowWidth(width);
-  };
-
   return (
-    <AppContext.Provider value={context}>
-      <div className="App">
+    <div className="App">
+      <p> top level</p>
         <BrowserRouter>
+      <BlahBlahContext.Provider value={2}>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
@@ -39,9 +21,9 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
+    </BlahBlahContext.Provider>
         </BrowserRouter>
       </div>
-    </AppContext.Provider>
   );
 }
 
