@@ -1,9 +1,10 @@
 import React from "react";
 import { ColorCardsRowsSet } from "../..";
 import { CardColor } from "../../../models";
+import { useAppContext } from "../../../support/context/appContextProvider";
 
 export function ColorsPageTemplate(props: { cards: CardColor[] }) {
-  const cardCols = 5;
+  const app = useAppContext();
 
   return (
     <React.Fragment>
@@ -11,7 +12,10 @@ export function ColorsPageTemplate(props: { cards: CardColor[] }) {
         <p> The Color </p>
         <div className="column">
           {/* <CardGrid cards={props.cards} /> */}
-          <ColorCardsRowsSet cards={props.cards} cardsPerRow={4} />
+          <ColorCardsRowsSet
+            cards={props.cards}
+            cardsPerRow={app.screenSize + 1}
+          />
         </div>
       </div>
     </React.Fragment>

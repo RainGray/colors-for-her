@@ -4,15 +4,13 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { NotFound } from "./components/pages/notFound";
 import { useEffect, useState, createContext, useContext } from "react";
 import { ContextData } from "./models";
-
-
+import ContextProvider from "./support/context/appContextProvider";
 
 function App() {
   return (
     <div className="App">
-      <p> top level</p>
-        <BrowserRouter>
-      <BlahBlahContext.Provider value={2}>
+      <BrowserRouter>
+        <ContextProvider>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
@@ -21,9 +19,9 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
-    </BlahBlahContext.Provider>
-        </BrowserRouter>
-      </div>
+        </ContextProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 

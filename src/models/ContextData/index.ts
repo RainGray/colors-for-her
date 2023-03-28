@@ -1,4 +1,6 @@
+import { ScreenSize } from "../screenSize";
+
 export interface ContextData {
   screenWidth: number;
-  smallScreen: boolean;
+  screenSize: ScreenSize;
 }
