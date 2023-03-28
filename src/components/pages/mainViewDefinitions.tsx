@@ -1,15 +1,5 @@
+import { AnimalsPage } from "./animalsPage";
 import { ColorsPage } from "./colorsPage";
-
-const Colors = () => (
-  <div>
-    <h1> Colors </h1>
-  </div>
-);
-const Animals = () => (
-  <div>
-    <h1> Animals </h1>
-  </div>
-);
 
 export const mainViewDefinitions: {
   name: string;
@@ -22,7 +12,7 @@ export const mainViewDefinitions: {
     name: "Animals",
     urlName: "card-animals",
     description: "there is some cards to learn animals",
-    element: <Colors />,
+    element: <AnimalsPage />,
   },
 
   {

@@ -29,7 +29,6 @@ export function ColorCardsRowsSet(props: {
   const deck: CardColor[] = [];
   var result: any[] = [];
 
-  console.log("I was being called");
   createNewDeck(deck, theCards);
   while (deck.length > 0) {
     result.push(makeABatch(deck, theCPR));
