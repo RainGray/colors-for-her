@@ -1,0 +1,9 @@
+.flagButton {
+    display: inline-block;
+    padding-right: 4;
+    cursor:'pointer';
+}
+
+.flagButton:last-child {
+    padding-right: 0;
+}

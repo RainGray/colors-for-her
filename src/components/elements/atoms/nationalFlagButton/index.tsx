@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 
-function parseFlagFromLocalStorage() {
-    const icon = JSON.parse(localStorage.getItem('firstFlag') || '');
-    return (icon ? icon : '🇬🇧')
+function parseFlagFromLocalStorage(languageSlot: string) {
+    try {
+        const icon = JSON.parse(localStorage.getItem(languageSlot) || '');
+        return (icon ? icon : '🇬🇧')
+    } catch {
+        return '🇬🇧'
+    }
+    
 }
 
-export function NationalFlagButton(): JSX.Element {
-    const [icon, setIcon] = useState(parseFlagFromLocalStorage());
+export function NationalFlagButton(props: {languageSlot: string}): JSX.Element {
+    const [icon, setIcon] = useState(parseFlagFromLocalStorage(props.languageSlot));
 
     function ChangeFlag() {
         if (icon == '🇬🇧') {
@@ -17,11 +22,11 @@ export function NationalFlagButton(): JSX.Element {
     }
 
     useEffect(() => {
-        localStorage.setItem('firstFlag', JSON.stringify(icon));
+        localStorage.setItem(props.languageSlot, JSON.stringify(icon));
     }, [icon])
 
     return (
-        <div onClick={ChangeFlag} style={{cursor:'pointer'}}>
+        <div className="flagButton" onClick={ChangeFlag}>
             {icon}
         </div>
     )

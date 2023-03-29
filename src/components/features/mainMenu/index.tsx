@@ -1,4 +1,5 @@
 import { NationalFlagButton } from "../../elements";
+import { LanguageSwitcher } from "../../elements/molecules/languageSwitcher";
 import { mainViewDefinitions } from "../../pages/mainViewDefinitions";
 import { MainMenuItem } from "./mainMenuItem";
 
@@ -21,8 +22,7 @@ export const MainMenu = (): JSX.Element => {
           description={mvd.description}
         />
       ))}
-      <NationalFlagButton/>
-      <NationalFlagButton/>
+      <LanguageSwitcher />
     </div>
   );
 };
