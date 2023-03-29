@@ -1,9 +1,8 @@
 import { RadialGradientColor } from "../colorRadialGradient";
+import { Language } from "../language";
 
-interface Word {
-  eng: string;
-  rus: string;
-  ukr: string;
+type Word = {
+  [key in Language]: string;
 }
 
 export interface CardColor {

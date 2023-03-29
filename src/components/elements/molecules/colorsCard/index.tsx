@@ -1,5 +1,6 @@
 import "./style.css";
 import { CardColor, RadialGradientColor } from "../../../../models";
+import { Language } from "../../../../models";
 
 export function ColorCard(props: { card: CardColor }): JSX.Element {
   const { color, text } = props.card;
@@ -22,10 +23,10 @@ export function ColorCard(props: { card: CardColor }): JSX.Element {
       <div className="row" style={{ width: "100%", height: "100%" }}>
         <div className="column">
           <p className="card-text">
-            {text.eng[0]} - {text.eng}
+            {text[Language.eng][0]} - {text[Language.eng]}
           </p>
           <p className="card-text">
-            {text.rus[0]} - {text.rus}
+            {text[Language.ukr][0]} - {text[Language.ukr]}
           </p>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { NationalFlagButton } from "../../elements";
 import { mainViewDefinitions } from "../../pages/mainViewDefinitions";
 import { MainMenuItem } from "./mainMenuItem";
 
@@ -20,6 +21,8 @@ export const MainMenu = (): JSX.Element => {
           description={mvd.description}
         />
       ))}
+      <NationalFlagButton/>
+      <NationalFlagButton/>
     </div>
   );
 };
