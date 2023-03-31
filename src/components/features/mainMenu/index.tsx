@@ -5,10 +5,6 @@ import { mainViewDefinitions } from "../../pages/mainViewDefinitions";
 import { MainMenuItem } from "./mainMenuItem";
 
 export const MainMenu = (): JSX.Element => {
-    const [osButton, setOsButton] = useState('my OS')
-    function setOSButtonText() {
-      setOsButton(getOperatingSystem());
-    }
 
   return (
     <div
@@ -29,7 +25,6 @@ export const MainMenu = (): JSX.Element => {
         />
       ))}
       <LanguageSwitcher />
-      <div style={{cursor: 'pointer'}} onClick={setOSButtonText}>{osButton}</div>
     </div>
   );
 };
