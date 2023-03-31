@@ -4,10 +4,6 @@ import { NationalFlagButton } from "../../atoms";
 export function LanguageSwitcher(): JSX.Element {
   let and = " & ";
 
-  function consoleInfo(langSlot: string): void {
-    console.log(`We a triggering ${langSlot} language slot`);
-  }
-
   const app = useAppContext();
 
   return (

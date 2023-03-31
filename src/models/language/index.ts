@@ -11,4 +11,5 @@ export type Words = {
 export interface Language {
   str: LanguageEnum;
   flag: string;
+  isoCode: string;
 }

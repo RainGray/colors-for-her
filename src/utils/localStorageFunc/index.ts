@@ -5,6 +5,6 @@ export function parseLangFromLocalStorage(languageSlot: string): Language {
     const lang = JSON.parse(localStorage.getItem(languageSlot) || "");
     return lang;
   } catch {
-    return { str: LanguageEnum.eng, flag: "🇬🇧" };
+    return { str: LanguageEnum.eng, flag: "🇬🇧", isoCode: 'GB' };
   }
 }

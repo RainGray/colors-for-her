@@ -39,7 +39,7 @@ export function nextItemAfterXExceptY(myArray: any[], itemX: any, itemY: any) {
   }
 
   let nextIndex = (currentIndex + 1) % myArray.length;
-  while (myArray[nextIndex] === itemY || myArray[nextIndex] === itemX) {
+  while (myArray[nextIndex] == itemY || myArray[nextIndex] == itemX) {
     nextIndex = (nextIndex + 1) % myArray.length;
   }
   return myArray[nextIndex];

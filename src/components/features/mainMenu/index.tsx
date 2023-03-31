@@ -1,9 +1,15 @@
-import { NationalFlagButton } from "../../elements";
+import { useState } from "react";
+import { getOperatingSystem } from "../../../utils";
 import { LanguageSwitcher } from "../../elements/molecules/languageSwitcher";
 import { mainViewDefinitions } from "../../pages/mainViewDefinitions";
 import { MainMenuItem } from "./mainMenuItem";
 
 export const MainMenu = (): JSX.Element => {
+    const [osButton, setOsButton] = useState('my OS')
+    function setOSButtonText() {
+      setOsButton(getOperatingSystem());
+    }
+
   return (
     <div
       className="row"
@@ -23,6 +29,7 @@ export const MainMenu = (): JSX.Element => {
         />
       ))}
       <LanguageSwitcher />
+      <div style={{cursor: 'pointer'}} onClick={setOSButtonText}>{osButton}</div>
     </div>
   );
 };
