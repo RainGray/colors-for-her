@@ -14,7 +14,7 @@ export function ColorsPageTemplate(props: { cards: CardColor[] }) {
           {/* <CardGrid cards={props.cards} /> */}
           <ColorCardsRowsSet
             cards={props.cards}
-            cardsPerRow={app.screenSize + 1}
+            cardsPerRow={app.screen.screenSize + 1}
           />
         </div>
       </div>

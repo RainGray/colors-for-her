@@ -1,3 +1,5 @@
+import { buffer } from "stream/consumers";
+
 export function listToMatrix(list: Array<any>, elementsPerSubArray: number) {
   var matrix: Array<any> = [],
     i,
@@ -22,4 +24,23 @@ export function removeArrayItem(myArray: any[], key: any) {
   } else {
     return myArray;
   }
+}
+
+export function nextItemAfterXExceptY(myArray: any[], itemX: any, itemY: any) {
+  if (myArray.length == 0) {
+    throw new Error("Array is empty");
+  }
+  if (myArray.length <= 2) {
+    return myArray[0];
+  }
+  const currentIndex = myArray.indexOf(itemX);
+  if (currentIndex === -1) {
+    return myArray[0];
+  }
+
+  let nextIndex = (currentIndex + 1) % myArray.length;
+  while (myArray[nextIndex] === itemY || myArray[nextIndex] === itemX) {
+    nextIndex = (nextIndex + 1) % myArray.length;
+  }
+  return myArray[nextIndex];
 }

@@ -10,10 +10,14 @@ export const AnimalsPage = (): JSX.Element => {
   return (
     <div className="Column">
       <div className="row"> Hello and welcome! Animals is here</div>
-      <div className="row"> {`your screen size now is ${app.screenWidth}`}</div>
-      <div className="row"> {`your screen size now is ${app.screenSize}`}</div>
+      <div className="row">
+        {`your screen size now is ${app.screen.screenWidth}`}
+      </div>
+      <div className="row">
+        {`your screen size now is ${app.screen.screenSize}`}
+      </div>
 
-      {app.screenSize > 3 ? <AnimalsXL /> : <AnimalsM />}
+      {app.screen.screenSize > 3 ? <AnimalsXL /> : <AnimalsM />}
     </div>
   );
 };

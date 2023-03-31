@@ -1,9 +1,15 @@
 import "./style.css";
 import { CardColor, RadialGradientColor } from "../../../../models";
-import { Language } from "../../../../models";
+import { LanguageEnum } from "../../../../models";
+import { useAppContext } from "../../../../support/context/appContextProvider";
 
 export function ColorCard(props: { card: CardColor }): JSX.Element {
   const { color, text } = props.card;
+
+  const app = useAppContext();
+  const primaryLanguage = app.language.primaryLanguage.str;
+  const secondaryLanguage = app.language.secondaryLanguage.str;
+
   return (
     <div className="card">
       <div
@@ -23,10 +29,10 @@ export function ColorCard(props: { card: CardColor }): JSX.Element {
       <div className="row" style={{ width: "100%", height: "100%" }}>
         <div className="column">
           <p className="card-text">
-            {text[Language.eng][0]} - {text[Language.eng]}
+            {text[primaryLanguage][0]} - {text[primaryLanguage]}
           </p>
           <p className="card-text">
-            {text[Language.ukr][0]} - {text[Language.ukr]}
+            {text[secondaryLanguage][0]} - {text[secondaryLanguage]}
           </p>
         </div>
       </div>

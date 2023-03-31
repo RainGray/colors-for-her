@@ -49,11 +49,8 @@
   --color-secondary-2-4: #b0e900;
 }
 
-
 .flagButton {
-  background-color: tomato;
   padding-right: 9;
-  cursor:'pointer';
+  cursor: "pointer";
   margin-right: 5;
 }
-
