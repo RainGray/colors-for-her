@@ -1,6 +1,5 @@
 import "./style.css";
 import { CardColor, RadialGradientColor } from "../../../../models";
-import { LanguageEnum } from "../../../../models";
 import { useAppContext } from "../../../../support/context/appContextProvider";
 
 export function ColorCard(props: { card: CardColor }): JSX.Element {

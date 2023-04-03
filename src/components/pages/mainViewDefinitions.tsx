@@ -1,5 +1,5 @@
-import { AnimalsPage } from "./animalsPage";
-import { ColorsPage } from "./colorsPage";
+import { AnimalsPetsPage } from "./animalsPetsPage";
+import { RainbowColorsPage } from "./colorsRainbowPage";
 
 export const mainViewDefinitions: {
   name: string;
@@ -12,13 +12,13 @@ export const mainViewDefinitions: {
     name: "Animals",
     urlName: "card-animals",
     description: "there is some cards to learn animals",
-    element: <AnimalsPage />,
+    element: <AnimalsPetsPage />,
   },
 
   {
     name: "Colors",
     urlName: "card-colors",
     description: "there is some cards to learn colors",
-    element: <ColorsPage />,
+    element: <RainbowColorsPage />,
   },
 ];

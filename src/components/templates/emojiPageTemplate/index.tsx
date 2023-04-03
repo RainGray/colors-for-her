@@ -1,15 +1,15 @@
 import React from "react";
-import { ColorCardsRowsSet } from "../..";
-import { CardColor } from "../../../models";
+import { EmojiCardsRowsSet } from "../..";
+import { CardEmoji } from "../../../models";
 import { useAppContext } from "../../../support/context/appContextProvider";
 
-export function ColorsPageTemplate(props: { cards: CardColor[] }) {
+export function EmojiPageTemplate(props: { cards: CardEmoji[] }) {
   const app = useAppContext();
 
   return (
     <div className="column">
       {/* <CardGrid cards={props.cards} /> */}
-      <ColorCardsRowsSet
+      <EmojiCardsRowsSet
         cards={props.cards}
         cardsPerRow={app.screen.screenSize + 1}
       />

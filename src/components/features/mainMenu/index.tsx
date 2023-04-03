@@ -1,11 +1,8 @@
-import { useState } from "react";
-import { getOperatingSystem } from "../../../utils";
 import { LanguageSwitcher } from "../../elements/molecules/languageSwitcher";
 import { mainViewDefinitions } from "../../pages/mainViewDefinitions";
 import { MainMenuItem } from "./mainMenuItem";
 
 export const MainMenu = (): JSX.Element => {
-
   return (
     <div
       className="row"
@@ -15,7 +12,7 @@ export const MainMenu = (): JSX.Element => {
         color: "var(--color-secondary-1-4)",
       }}
     >
-      <p> MainMenu</p>
+      <p> Theme:</p>
       {mainViewDefinitions.map((mvd, i) => (
         <MainMenuItem
           key={i}

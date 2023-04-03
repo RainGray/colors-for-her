@@ -1,3 +1,5 @@
-export * from "./colorsPage";
 export * from "./homePage";
-export * from "./animalsPage";
+export * from "./colorsRainbowPage";
+export * from "./colorsPalettePage";
+export * from "./animalsPetsPage";
+export * from "./animalsFarmPage";

@@ -1,7 +1,7 @@
 import { CardColor } from "../../models";
 import { LanguageEnum } from "../../models";
 
-export const MyCardColor: CardColor[] = [
+export const RainbowCardColor: CardColor[] = [
   {
     name: "red",
     color: { core: "#FF0000", border: "#990000" },
@@ -63,6 +63,54 @@ export const MyCardColor: CardColor[] = [
       [LanguageEnum.eng]: "Purple",
       [LanguageEnum.rus]: "Фиолетовый",
       [LanguageEnum.ukr]: "Фіолетовий",
+    },
+  },
+];
+
+export const PaletteCardColor: CardColor[] = [
+  {
+    name: "white",
+    color: { core: "#ffffff", border: "#e1e1e1" },
+    text: {
+      [LanguageEnum.eng]: "White",
+      [LanguageEnum.rus]: "Белый",
+      [LanguageEnum.ukr]: "Білий",
+    },
+  },
+  {
+    name: "gray",
+    color: { core: "#f0f0f0", border: "#555555" },
+    text: {
+      [LanguageEnum.eng]: "Gray",
+      [LanguageEnum.rus]: "Серый",
+      [LanguageEnum.ukr]: "Сірий",
+    },
+  },
+  {
+    name: "black",
+    color: { core: "#303030", border: "#000000" },
+    text: {
+      [LanguageEnum.eng]: "Black",
+      [LanguageEnum.rus]: "Чёрный",
+      [LanguageEnum.ukr]: "Чорний",
+    },
+  },
+  {
+    name: "brown",
+    color: { core: "#A0522D", border: "#8B4513" },
+    text: {
+      [LanguageEnum.eng]: "Brown",
+      [LanguageEnum.rus]: "Коричневый",
+      [LanguageEnum.ukr]: "Коричневий",
+    },
+  },
+  {
+    name: "pink",
+    color: { core: "#FF69B4", border: "#FF1493" },
+    text: {
+      [LanguageEnum.eng]: "Pink",
+      [LanguageEnum.rus]: "Розовый",
+      [LanguageEnum.ukr]: "Рожевий",
     },
   },
 ];
