@@ -1,5 +1,5 @@
 import { useAppContext } from "../../../../support/context/appContextProvider";
-import { NationalFlagButton } from "../../atoms";
+import { NationalFlagButton } from "../nationalFlagButton";
 
 export function LanguageSwitcher(): JSX.Element {
   let and = " & ";

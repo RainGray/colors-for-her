@@ -4,7 +4,8 @@ import { Language, LanguageEnum, ScreenSize } from "../../../../models";
 import { useAppContext } from "../../../../support/context/appContextProvider";
 import { getOperatingSystem } from "../../../../utils";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-import { SvgFlag } from "../svgFlags";
+import { SvgFlag } from "../../atoms/svgFlags";
+import { FlagImage } from "../../atoms";
 
 export function NationalFlagButton(props: {
   language: Language;
@@ -33,19 +34,6 @@ export function NationalFlagButton(props: {
       break;
   }
 
-  let doesSupportingEmoji = false;
-  const os = getOperatingSystem();
-  switch (os) {
-    case osList.ios:
-      doesSupportingEmoji = true;
-      break;
-    case osList.macos:
-      doesSupportingEmoji = true;
-      break;
-    default:
-      doesSupportingEmoji = false;
-  }
-
   return (
     <div
       className="flagButton"
@@ -56,7 +44,7 @@ export function NationalFlagButton(props: {
         fontSize: responsiveFontSize,
       }}
     >
-      {doesSupportingEmoji ? props.language.flag : <SvgFlag langForFlag={props.language}/>}
+      <FlagImage language={props.language}/>
     </div>
 
   );

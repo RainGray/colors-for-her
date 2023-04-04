@@ -1,19 +1,16 @@
-import "./style.css";
+import './style.css'
 
-export function VerticalDivider(): JSX.Element {
+export function VerticalDividerContainer(props: {leftOption: JSX.Element, rightOption: JSX.Element}): JSX.Element {
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "1px",
-        height: "100%",
-        background:
-          "linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.1) 100% )",
-        margin: 20,
-      }}
-    >
-      <p style={{ height: "100%" }}></p>
-    </div>
-  );
+    <div className="divider-body">
+      <div className="row">
+        {props.leftOption}
+        <div className="text">Text text .</div>
+        {props.rightOption}
+      </div> 
+    </div>  
+
+  )
 }
+

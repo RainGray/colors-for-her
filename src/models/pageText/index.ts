@@ -1,6 +1,8 @@
-import { Words } from "../language";
+import { Words, Article } from "../language";
 
 export interface PageText {
   title: string;
-  text: Words;
+  // text: Words;
+  text: Article;
+
 }
