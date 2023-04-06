@@ -1,16 +1,17 @@
-import './style.css'
+import "./style.css";
 
-export function VerticalDividerContainer(props: {leftOption: JSX.Element, rightOption: JSX.Element}): JSX.Element {
-
+export function VerticalDividerContainer(props: {
+  leftOption: JSX.Element;
+  rightOption: JSX.Element;
+  middleElement?: JSX.Element;
+}): JSX.Element {
   return (
     <div className="divider-body">
-      <div className="row">
+      <div className="row" style={{ alignItems: "start" }}>
         {props.leftOption}
-        <div className="text">Text text .</div>
+        <div className="middle-element">{props.middleElement}</div>
         {props.rightOption}
-      </div> 
-    </div>  
-
-  )
+      </div>
+    </div>
+  );
 }
-

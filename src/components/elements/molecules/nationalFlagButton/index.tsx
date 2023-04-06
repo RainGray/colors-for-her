@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { osList } from "../../../../database";
-import { Language, LanguageEnum, ScreenSize } from "../../../../models";
+import { LanguageData, LanguageEnum, ScreenSize } from "../../../../models";
 import { useAppContext } from "../../../../support/context/appContextProvider";
 import { getOperatingSystem } from "../../../../utils";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
@@ -8,7 +8,7 @@ import { SvgFlag } from "../../atoms/svgFlags";
 import { FlagImage } from "../../atoms";
 
 export function NationalFlagButton(props: {
-  language: Language;
+  language: LanguageData;
   switcherFunction: () => void;
 }): JSX.Element {
   const app = useAppContext();
@@ -44,8 +44,7 @@ export function NationalFlagButton(props: {
         fontSize: responsiveFontSize,
       }}
     >
-      <FlagImage language={props.language}/>
+      <FlagImage language={props.language} />
     </div>
-
   );
 }

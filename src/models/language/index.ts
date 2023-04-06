@@ -10,10 +10,10 @@ export type Words = {
 
 export type Article = {
   [key in LanguageEnum]: JSX.Element;
-}
+};
 
-export interface Language {
-  str: LanguageEnum;
+export interface LanguageData {
+  enumCode: LanguageEnum;
   flag: string;
   isoCode: string;
 }

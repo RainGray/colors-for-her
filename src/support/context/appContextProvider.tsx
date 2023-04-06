@@ -6,7 +6,7 @@ import React, {
   PropsWithChildren,
 } from "react";
 import { BrowserRouterProps } from "react-router-dom";
-import { ContextData, Language, LanguageEnum } from "../../models";
+import { ContextData, LanguageData, LanguageEnum } from "../../models";
 import {
   nextItemAfterXExceptY,
   parseLangFromLocalStorage,
@@ -42,10 +42,10 @@ const AppContext = createContext<AppContextState>({
 const ContextProvider = ({
   children,
 }: PropsWithChildren<BrowserRouterProps>) => {
-  const [primaryLanguage, setPrimaryLanguage] = useState<Language>(
+  const [primaryLanguage, setPrimaryLanguage] = useState<LanguageData>(
     parseLangFromLocalStorage("primaryLanguage")
   );
-  const [secondaryLanguage, setSecondaryLanguage] = useState<Language>(
+  const [secondaryLanguage, setSecondaryLanguage] = useState<LanguageData>(
     parseLangFromLocalStorage("secondaryLanguage")
   );
 

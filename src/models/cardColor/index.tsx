@@ -1,5 +1,5 @@
 import { RadialGradientColor } from "../colorRadialGradient";
-import { Language, Words } from "../language";
+import { LanguageData, Words } from "../language";
 
 export interface CardColor {
   name: string;

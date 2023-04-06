@@ -6,8 +6,8 @@ export function EmojiCard(props: { card: CardEmoji }): JSX.Element {
   const { emoji, text } = props.card;
 
   const app = useAppContext();
-  const primaryLanguage = app.language.primaryLanguage.str;
-  const secondaryLanguage = app.language.secondaryLanguage.str;
+  const primaryLanguage = app.language.primaryLanguage.enumCode;
+  const secondaryLanguage = app.language.secondaryLanguage.enumCode;
 
   return (
     <div className="card">

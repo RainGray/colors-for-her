@@ -1,95 +1,131 @@
 import { FlagImage } from "../../components";
-import { LanguageEnum, PageText } from "../../models";
-import { useAppContext } from "../../support/context/appContextProvider";
+import { LanguageData, LanguageEnum, PageText } from "../../models";
 
-function CreateMyArticles() {
-  const app = useAppContext();
+export function HomeArticleIntro(language: LanguageData): JSX.Element {
+  switch (language.enumCode) {
+    case LanguageEnum.eng:
+      return (
+        <div>
+          <p>Hello!</p>
+          <p>
+            This site will help you to teach your kids languages. We will use
+            simple words written on a cards. All cards divided into categories.
+            Use menu above to select theme.
+          </p>
+        </div>
+      );
+    case LanguageEnum.rus:
+      return (
+        <div>
+          <p>Привет!</p>
+          <p>
+            Этот сайт поможет вам научить ваших детей языкам. Мы будем
+            использовать простые слова, написанные на карточках. Все карточки
+            разделены на категории. Используйте меню выше, чтобы выбрать тему.
+          </p>
+        </div>
+      );
+    case LanguageEnum.ukr:
+      return (
+        <div>
+          <p>Привіт!</p>
+          <p>
+            Цей сайт допоможе вам навчити ваших дітей мовам. Ми будемо
+            використовувати прості слова, написані на картках. Всі карти
+            розділені на категорії. Використовуйте меню вище, щоб вибрати тему.
+          </p>
+        </div>
+      );
 
-  // const HomeArticleIntro: PageText = {
-  //   title: "Welcome to the Home Page!",
-  //   text: {
-  //     [LanguageEnum.eng]: (
-  //       <div>
-  //         <p>"Hello!"</p>
-  //         <p>
-  //           "This site will help you to teach your kids languages. We will use
-  //           simple words written on a cards. All cards divided into categories.
-  //           Use menu above to select theme."
-  //         </p>
-  //       </div>
-  //     ),
-  //     [LanguageEnum.rus]: (
-  //       <div>
-  //         <p>"Привет!"</p>
-  //         <p>
-  //           " Этот сайт поможет вам научить ваших детей языкам. Мы будем
-  //           использовать простые слова, написанные на карточках. Все карты
-  //           разделены на категории. Используйте меню выше, чтобы выбрать тему."
-  //         </p>
-  //       </div>
-  //     ),
-  //     [LanguageEnum.ukr]: (
-  //       <div>
-  //         <p>"Привіт!"</p>
-  //         <p>
-  //           "Цей сайт допоможе вам навчити ваших дітей мовам. Ми будемо
-  //           використовувати прості слова, написані на картках. Всі карти
-  //           розділені на категорії. Використовуйте меню вище, щоб вибрати тему."
-  //         </p>
-  //       </div>
-  //     ),
-  //   },
-  // };
-
-  // const HomeArticleLangSwitch: PageText = {
-  //   title: "How to switch language",
-  //   text: {
-  //     [LanguageEnum.eng]: (
-  //       <p>
-  //         Use the <FlagImage language={app.language.primaryLanguage} />
-  //         flag buttons
-  //         <FlagImage language={app.language.secondaryLanguage} /> in the Main
-  //         Menu to switch between different languages.
-  //       </p>
-  //     ),
-  //     [LanguageEnum.rus]: (
-  //       <p>
-  //         Используйте кнопки в виде
-  //         <FlagImage language={app.language.primaryLanguage} />
-  //         флагов
-  //         <FlagImage language={app.language.secondaryLanguage} /> в главном меню
-  //         для переключения между разными языками.
-  //       </p>
-  //     ),
-  //     [LanguageEnum.ukr]: (
-  //       <p>
-  //         Використовуйте кнопки у вигляді
-  //         <FlagImage language={app.language.primaryLanguage} />
-  //         прапорів
-  //         <FlagImage language={app.language.secondaryLanguage} /> у головному
-  //         меню, щоб переключатися між різними мовами.
-  //       </p>
-  //     ),
-  //   },
-  // };
-
-  const test: PageText = {
-    title: "test article",
-    text: {
-      [LanguageEnum.eng]: <p>Hi</p>,
-      [LanguageEnum.rus]: <p>Привет</p>,
-      [LanguageEnum.ukr]: <p>Здоровеньки булы</p>,
-    },
-  };
-
-  return {
-    // HomeArticleIntro: HomeArticleIntro,
-    // HomeArticleLangSwitch: HomeArticleLangSwitch,
-    Test: test,
-  };
+    default:
+      return <p>{`Error loading article with ${language} language`}</p>;
+  }
 }
 
-const articles = CreateMyArticles();
-// export const HomeArticleIntro = articles.HomeArticleIntro;
-// export const HomeArticleLangSwitch = articles.HomeArticleLangSwitch;
-export const testArticle = articles.Test;
+export function HomeArticleLangSwitch(language: LanguageData): JSX.Element {
+  switch (language.enumCode) {
+    case LanguageEnum.eng:
+      return (
+        <p>
+          Use the <FlagImage language={language} />
+          flag buttons
+          <FlagImage language={language} /> in the Main Menu to switch between
+          different languages.
+        </p>
+      );
+    case LanguageEnum.rus:
+      return (
+        <p>
+          Используйте кнопки в виде <FlagImage language={language} />
+          флагов
+          <FlagImage language={language} /> в главном меню для переключения
+          между разными языками.
+        </p>
+      );
+    case LanguageEnum.ukr:
+      return (
+        <p>
+          Використовуйте кнопки у вигляді <FlagImage language={language} />
+          прапорів
+          <FlagImage language={language} /> у головному меню, щоб переключатися
+          між різними мовами.
+        </p>
+      );
+
+    default:
+      return <p>{`Error loading article with ${language} language`}</p>;
+  }
+}
+
+export function HomeArticleAppName(language: LanguageData): JSX.Element {
+  switch (language.enumCode) {
+    case LanguageEnum.eng:
+      return (
+        <div>
+          <p>Who is She?</p>
+          <p>
+            This site is called "Colors for Her", but who is "her"? It's simle.
+            I'm talking about my little daughter! And if you have a son or
+            several kids then use a button in the middle to change this site
+            name!
+          </p>
+        </div>
+      );
+    case LanguageEnum.rus:
+      return (
+        <div>
+          <p>Кто же Она?</p>
+          <p>
+            Этот сайт называется «Цвета для нее», но кто такая «она»? Это
+            просто. Я говорю о моей маленькой дочери! А если у вас есть сын или
+            несколько детей, используйте кнопку посередине, чтобы изменить
+            название этого сайта!
+          </p>
+        </div>
+      );
+    case LanguageEnum.ukr:
+      return (
+        <div>
+          <p>Хто вона?</p>
+          <p>
+            Цей сайт називається «Кольори для неї», але хто така «вона»? Це
+            просто. Я говорю про мою маленьку дочку! А якщо у вас є син чи
+            кілька дітей, використовуйте кнопку посередині, щоб змінити назву
+            цього сайту!
+          </p>
+        </div>
+      );
+
+    default:
+      return <p>{`Error loading article with ${language} language`}</p>;
+  }
+}
+
+// export const test: PageText = {
+//   title: "test article",
+//   text: {
+//     [LanguageEnum.eng]: <p>Hi</p>,
+//     [LanguageEnum.rus]: <p>Привет</p>,
+//     [LanguageEnum.ukr]: <p>Здоровеньки булы</p>,
+//   },
+// };

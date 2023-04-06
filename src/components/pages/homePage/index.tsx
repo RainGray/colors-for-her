@@ -1,11 +1,10 @@
 import {
-  // HomeArticleIntro,
-  // HomeArticleLangSwitch,
-  testArticle,
-} from "../../../database/pageText";
+  HomeArticleIntro,
+  HomeArticleLangSwitch,
+  HomeArticleAppName,
+} from "../../../database";
 import { useAppContext } from "../../../support/context/appContextProvider";
-import { LocalizedText } from "../../templates";
-import { VerticalDividerContainer } from "../../features";
+import { VerticalDividerContainer, HelloText } from "../../features";
 import "./style.css";
 
 export const HomePage = (): JSX.Element => {
@@ -13,43 +12,34 @@ export const HomePage = (): JSX.Element => {
 
   const PrimLangIntro: JSX.Element = (
     <div className="article-column article-column-left">
-      {/* <LocalizedText
-        article={testArticle}
-        language={app.language.primaryLanguage}
-        key={"primaryLanguageHelloArticle"}
-      /> */}
-      test test test
+      {HomeArticleIntro(app.language.primaryLanguage)}
     </div>
   );
   const SecLangIntro: JSX.Element = (
     <div className="article-column article-column-right">
-      {/* <LocalizedText
-        article={testArticle}
-        language={app.language.secondaryLanguage}
-        key={"secondaryLanguageHelloArticle"}
-      /> */}
-      test test test
+      {HomeArticleIntro(app.language.secondaryLanguage)}
     </div>
   );
 
   const PrimLangFlagButtons: JSX.Element = (
     <div className="article-column article-column-left">
-      {/* <LocalizedText
-        article={testArticle}
-        language={app.language.primaryLanguage}
-        key={"primaryLanguageFlagButtonArticle"}
-      /> */}
-      test test test
+      {HomeArticleLangSwitch(app.language.primaryLanguage)}
     </div>
   );
   const SecLangFlagButtons: JSX.Element = (
     <div className="article-column article-column-right">
-      {/* <LocalizedText
-        article={testArticle}
-        language={app.language.secondaryLanguage}
-        key={"secondaryLanguageFlagButtonArticle"}
-      /> */}
-      test test test
+      {HomeArticleLangSwitch(app.language.secondaryLanguage)}
+    </div>
+  );
+
+  const PrimLangAppName: JSX.Element = (
+    <div className="article-column article-column-left">
+      {HomeArticleAppName(app.language.primaryLanguage)}
+    </div>
+  );
+  const SecLangAppName: JSX.Element = (
+    <div className="article-column article-column-right">
+      {HomeArticleAppName(app.language.secondaryLanguage)}
     </div>
   );
 
@@ -58,10 +48,15 @@ export const HomePage = (): JSX.Element => {
       <VerticalDividerContainer
         leftOption={PrimLangIntro}
         rightOption={SecLangIntro}
+        middleElement={HelloText()}
       />
       <VerticalDividerContainer
         leftOption={PrimLangFlagButtons}
         rightOption={SecLangFlagButtons}
+      />
+      <VerticalDividerContainer
+        leftOption={PrimLangAppName}
+        rightOption={SecLangAppName}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import { Language, ScreenSize } from "../../models";
+import { LanguageData, ScreenSize } from "../../models";
 
 export interface AppContextState {
   screen: ScreenState;
@@ -17,6 +17,6 @@ export interface LanguageSwitcherState {
 }
 
 export interface LanguageState {
-  primaryLanguage: Language;
-  secondaryLanguage: Language;
+  primaryLanguage: LanguageData;
+  secondaryLanguage: LanguageData;
 }

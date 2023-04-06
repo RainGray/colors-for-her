@@ -1,19 +1,19 @@
-import { Language, LanguageEnum } from "../../models";
+import { LanguageData, LanguageEnum } from "../../models";
 
-export const SupportedLanguages: Language[] = [
+export const SupportedLanguages: LanguageData[] = [
   {
-    str: LanguageEnum.eng,
+    enumCode: LanguageEnum.eng,
     flag: "🇬🇧",
-    isoCode: 'gb',
+    isoCode: "gb",
   },
   {
-    str: LanguageEnum.rus,
+    enumCode: LanguageEnum.rus,
     flag: "🇷🇺",
-    isoCode: 'ru',
+    isoCode: "ru",
   },
   {
-    str: LanguageEnum.ukr,
+    enumCode: LanguageEnum.ukr,
     flag: "🇺🇦",
-    isoCode: 'ua',
+    isoCode: "ua",
   },
 ];

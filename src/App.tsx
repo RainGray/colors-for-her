@@ -38,6 +38,7 @@ function App() {
                 <Route path="pets-animals" element={<AnimalsPetsPage />} />
                 <Route path="farm-animals" element={<AnimalsFarmPage />} />
               </Route>
+              {/* <Route path="test" element={test.text[LanguageEnum.eng]} /> */}
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
