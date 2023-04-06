@@ -20,8 +20,12 @@
   color: #333;
   font-size: 40px;
   padding: 0px 20px;
-
+  min-width: 216px;
   max-width: 50%;
+  /* margin: 34px 0px auto; */
+}
+
+.middle-element:first-child {
   margin: 34px 0px auto;
 }
 

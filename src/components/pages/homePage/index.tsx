@@ -4,7 +4,7 @@ import {
   HomeArticleAppName,
 } from "../../../database";
 import { useAppContext } from "../../../support/context/appContextProvider";
-import { VerticalDividerContainer, HelloText } from "../../features";
+import { VerticalDividerContainer, HelloText, LangEmoji } from "../../features";
 import "./style.css";
 
 export const HomePage = (): JSX.Element => {
@@ -53,6 +53,7 @@ export const HomePage = (): JSX.Element => {
       <VerticalDividerContainer
         leftOption={PrimLangFlagButtons}
         rightOption={SecLangFlagButtons}
+        middleElement={LangEmoji}
       />
       <VerticalDividerContainer
         leftOption={PrimLangAppName}
