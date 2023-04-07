@@ -5,6 +5,7 @@ import {
 } from "../../../database";
 import { useAppContext } from "../../../support/context/appContextProvider";
 import { VerticalDividerContainer, HelloText, LangEmoji } from "../../features";
+import { PronounButtons } from "../../features/verticalDivider/middleElements/pronounButtons";
 import "./style.css";
 
 export const HomePage = (): JSX.Element => {
@@ -58,6 +59,7 @@ export const HomePage = (): JSX.Element => {
       <VerticalDividerContainer
         leftOption={PrimLangAppName}
         rightOption={SecLangAppName}
+        middleElement={PronounButtons()}
       />
     </div>
   );

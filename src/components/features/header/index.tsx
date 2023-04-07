@@ -54,7 +54,7 @@ export const Header = (): JSX.Element => {
         }}
         onClick={returnToHome}
       >
-        Colors for Her
+        {`Colors for ${app.homePageData.headerPronoun}`}
       </p>
     </div>
   );

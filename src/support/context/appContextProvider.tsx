@@ -10,6 +10,7 @@ import { ContextData, LanguageData, LanguageEnum } from "../../models";
 import {
   nextItemAfterXExceptY,
   parseLangFromLocalStorage,
+  parsePronounFromLocalStorage,
   screenSizeFunction,
 } from "../../utils";
 import {
@@ -17,6 +18,7 @@ import {
   LanguageSwitcherState,
   ScreenState,
   LanguageState,
+  HomePageState,
 } from "./appContext.state";
 import { SupportedLanguages } from "../../database";
 
@@ -30,24 +32,30 @@ const AppContext = createContext<AppContextState>({
     screenSize: screenSizeFunction(0),
   } as ScreenState,
   language: {
-    primaryLanguage: parseLangFromLocalStorage("primaryLanguage"),
-    secondaryLanguage: parseLangFromLocalStorage("secondaryLanguage"),
+    primaryLanguage: parseLangFromLocalStorage("primaryLanguage", true),
+    secondaryLanguage: parseLangFromLocalStorage("secondaryLanguage", false),
   } as LanguageState,
   languageSwitcher: {
     primaryLanguageSwitcher: placeholder,
     secondaryLanguageSwitcher: placeholder,
   } as LanguageSwitcherState,
+  homePageData: {
+    headerPronoun: parsePronounFromLocalStorage(),
+    changeTitle: placeholder,
+  } as HomePageState,
 });
 
 const ContextProvider = ({
   children,
 }: PropsWithChildren<BrowserRouterProps>) => {
   const [primaryLanguage, setPrimaryLanguage] = useState<LanguageData>(
-    parseLangFromLocalStorage("primaryLanguage")
+    parseLangFromLocalStorage("primaryLanguage", true)
   );
   const [secondaryLanguage, setSecondaryLanguage] = useState<LanguageData>(
-    parseLangFromLocalStorage("secondaryLanguage")
+    parseLangFromLocalStorage("secondaryLanguage", false)
   );
+
+  const [pronoun, setPronoun] = useState(parsePronounFromLocalStorage());
 
   function primaryLanguageSwitcherFunc() {
     setPrimaryLanguage(
@@ -69,9 +77,17 @@ const ContextProvider = ({
     );
   }
 
+  function changePronoun(newPronoun: string) {
+    setPronoun(newPronoun);
+  }
+
   useEffect(() => {
     localStorage.setItem("primaryLanguage", JSON.stringify(primaryLanguage));
   }, [primaryLanguage]);
+
+  useEffect(() => {
+    localStorage.setItem("pronoun", JSON.stringify(pronoun));
+  }, [pronoun]);
 
   useEffect(() => {
     localStorage.setItem(
@@ -81,8 +97,8 @@ const ContextProvider = ({
   }, [secondaryLanguage]);
 
   useEffect(() => {
-    setPrimaryLanguage(parseLangFromLocalStorage("primaryLanguage"));
-    setSecondaryLanguage(parseLangFromLocalStorage("secondaryLanguage"));
+    setPrimaryLanguage(parseLangFromLocalStorage("primaryLanguage", true));
+    setSecondaryLanguage(parseLangFromLocalStorage("secondaryLanguage", false));
   }, []);
 
   const [width, setWindowWidth] = useState(0);
@@ -99,6 +115,10 @@ const ContextProvider = ({
     languageSwitcher: {
       primaryLanguageSwitcher: primaryLanguageSwitcherFunc,
       secondaryLanguageSwitcher: secondaryLanguageSwitcherFunc,
+    },
+    homePageData: {
+      headerPronoun: pronoun,
+      changeTitle: changePronoun,
     },
   };
 

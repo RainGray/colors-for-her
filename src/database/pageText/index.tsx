@@ -84,7 +84,7 @@ export function HomeArticleAppName(language: LanguageData): JSX.Element {
         <div>
           <p>Who is She?</p>
           <p>
-            This site is called "Colors for Her", but who is "her"? It's simle.
+            This site is called "Colors for Her", but who is "Her"? It's simle.
             I'm talking about my little daughter! And if you have a son or
             several kids then use a button in the middle to change this site
             name!
@@ -96,7 +96,7 @@ export function HomeArticleAppName(language: LanguageData): JSX.Element {
         <div>
           <p>Кто же Она?</p>
           <p>
-            Этот сайт называется «Цвета для нее», но кто такая «она»? Это
+            Этот сайт называется «Цвета для Нее», но кто такая «Она»? Это
             просто. Я говорю о моей маленькой дочери! А если у вас есть сын или
             несколько детей, используйте кнопку посередине, чтобы изменить
             название этого сайта!
@@ -108,7 +108,7 @@ export function HomeArticleAppName(language: LanguageData): JSX.Element {
         <div>
           <p>Хто вона?</p>
           <p>
-            Цей сайт називається «Кольори для неї», але хто така «вона»? Це
+            Цей сайт називається «Кольори для Неї», але хто така «Вона»? Це
             просто. Я говорю про мою маленьку дочку! А якщо у вас є син чи
             кілька дітей, використовуйте кнопку посередині, щоб змінити назву
             цього сайту!
