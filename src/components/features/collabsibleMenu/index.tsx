@@ -1,5 +1,7 @@
+import { LanguageSwitcher } from "../../elements/molecules/languageSwitcher";
 import { mainViewDefinitions } from "../../pages/mainViewDefinitions";
 import { MainMenuItem } from "../mainMenu/mainMenuItem";
+import { CollapsibleMenuItem } from "./collapsibleMenuItem";
 import "./style.css";
 import { useState } from "react";
 
@@ -31,11 +33,12 @@ export const CollapsibleMenu = () => {
     return (
       <div className="content" style={{ display: display }}>
         {mainViewDefinitions.map((mvd, i) => (
-          <MainMenuItem
+          <CollapsibleMenuItem
             key={i}
             name={mvd.name}
             urlName={mvd.urlName}
             description={mvd.description}
+            childMenu={mvd.childMenu}
           />
         ))}
       </div>
@@ -44,7 +47,13 @@ export const CollapsibleMenu = () => {
 
   return (
     <div className="main-menu">
-      <OpenButton />
+      <div
+        className="row"
+        style={{ width: "100%", justifyContent: "space-between" }}
+      >
+        <OpenButton />
+        <LanguageSwitcher />
+      </div>
       <MenuItems />
     </div>
   );

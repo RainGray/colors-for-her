@@ -14,6 +14,7 @@ export function LanguageSwitcher(): JSX.Element {
         borderRadius: 10,
         borderWidth: 1,
         padding: 0,
+        margin: "1px 20px",
         height: "auto",
       }}
     >

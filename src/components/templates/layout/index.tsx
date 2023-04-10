@@ -6,21 +6,19 @@ import { MainSection } from "../../pages/mainSection";
 import { useAppContext } from "../../../support/context/appContextProvider";
 import { ScreenSize } from "../../../models";
 import { CollapsibleMenu } from "../../features";
+import { useMemo } from "react";
 
 export const Layout = (): JSX.Element => {
   const app = useAppContext();
-  const menu: JSX.Element =
-    app.screen.screenSize === ScreenSize.l ||
-    app.screen.screenSize === ScreenSize.xl ||
-    app.screen.screenSize === ScreenSize.m ? (
-      <MainMenu />
-    ) : (
-      // <CollapsibleMenu />
-      <CollapsibleMenu />
-    );
-  console.log(
-    app.screen.screenSize === ScreenSize.l || ScreenSize.xl || ScreenSize.m
-  );
+  const menu = useMemo(() => currentMenu(), [app.screen.screenSize]);
+
+  function currentMenu(): JSX.Element {
+    if (app.screen.isMobile) {
+      return <CollapsibleMenu />;
+    } else {
+      return <MainMenu />;
+    }
+  }
 
   return (
     <div className="layout">

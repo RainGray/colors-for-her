@@ -1,13 +1,8 @@
+import { ViewDefinition } from "../../../models";
 import { PaletteColorsPage } from "../colorsPalettePage";
 import { RainbowColorsPage } from "../colorsRainbowPage";
 
-export const colorViewDefinitions: {
-  name: string;
-  urlName: string;
-  description: string;
-  // icon: JSX.Element;
-  element: React.ReactNode;
-}[] = [
+export const colorViewDefinitions: ViewDefinition[] = [
   {
     name: "Rainbow",
     urlName: "rainbow",

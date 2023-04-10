@@ -84,7 +84,7 @@ export function HomeArticleAppName(language: LanguageData): JSX.Element {
         <div>
           <p>Who is She?</p>
           <p>
-            This site is called "Colors for Her", but who is "Her"? It's simle.
+            This site is called "Colors for Her", but who is "Her"? It's simple.
             I'm talking about my little daughter! And if you have a son or
             several kids then use a button in the middle to change this site
             name!

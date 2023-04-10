@@ -1,18 +1,16 @@
+import { ViewDefinition } from "../../models";
 import { AnimalsPetsPage } from "./animalsPetsPage";
 import { RainbowColorsPage } from "./colorsRainbowPage";
+import { animalsViewDefinitions } from "./pagesViewDefinitions/animalsViewDefinitions";
+import { colorViewDefinitions } from "./pagesViewDefinitions/colorsViewDefinitions";
 
-export const mainViewDefinitions: {
-  name: string;
-  urlName: string;
-  description: string;
-  // icon: JSX.Element;
-  element: React.ReactNode;
-}[] = [
+export const mainViewDefinitions: ViewDefinition[] = [
   {
     name: "Animals",
     urlName: "card-animals",
     description: "there is some cards to learn animals",
     element: <AnimalsPetsPage />,
+    childMenu: animalsViewDefinitions,
   },
 
   {
@@ -20,5 +18,6 @@ export const mainViewDefinitions: {
     urlName: "card-colors",
     description: "there is some cards to learn colors",
     element: <RainbowColorsPage />,
+    childMenu: colorViewDefinitions,
   },
 ];

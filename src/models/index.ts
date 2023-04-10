@@ -5,3 +5,4 @@ export * from "./screenSize";
 export * from "./language";
 export * from "./cardEmoji";
 export * from "./pageText";
+export * from "./viewDefinition";

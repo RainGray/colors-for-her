@@ -10,6 +10,7 @@ export interface AppContextState {
 export interface ScreenState {
   screenWidth: number;
   screenSize: ScreenSize;
+  isMobile: boolean;
 }
 
 export interface LanguageSwitcherState {

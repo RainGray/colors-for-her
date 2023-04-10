@@ -26,3 +26,11 @@ export function screenSizeFunction(screenWidth: number) {
 
   return size;
 }
+
+export function isMobileScreen(screenSize: ScreenSize) {
+  if ([ScreenSize.xl, ScreenSize.l, ScreenSize.m].includes(screenSize)) {
+    return false;
+  } else {
+    return true;
+  }
+}

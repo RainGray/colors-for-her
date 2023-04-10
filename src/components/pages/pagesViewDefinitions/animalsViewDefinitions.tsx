@@ -1,13 +1,8 @@
+import { ViewDefinition } from "../../../models";
 import { AnimalsFarmPage } from "../animalsFarmPage";
 import { AnimalsPetsPage } from "../animalsPetsPage";
 
-export const animalsViewDefinitions: {
-  name: string;
-  urlName: string;
-  description: string;
-  // icon: JSX.Element;
-  element: React.ReactNode;
-}[] = [
+export const animalsViewDefinitions: ViewDefinition[] = [
   {
     name: "Pets",
     urlName: "pets-animals",

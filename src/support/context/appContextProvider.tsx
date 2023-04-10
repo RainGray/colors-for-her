@@ -6,8 +6,14 @@ import React, {
   PropsWithChildren,
 } from "react";
 import { BrowserRouterProps } from "react-router-dom";
-import { ContextData, LanguageData, LanguageEnum } from "../../models";
 import {
+  ContextData,
+  LanguageData,
+  LanguageEnum,
+  ScreenSize,
+} from "../../models";
+import {
+  isMobileScreen,
   nextItemAfterXExceptY,
   parseLangFromLocalStorage,
   parsePronounFromLocalStorage,
@@ -30,6 +36,7 @@ const AppContext = createContext<AppContextState>({
   screen: {
     screenWidth: 0,
     screenSize: screenSizeFunction(0),
+    isMobile: false,
   } as ScreenState,
   language: {
     primaryLanguage: parseLangFromLocalStorage("primaryLanguage", true),
@@ -101,12 +108,17 @@ const ContextProvider = ({
     setSecondaryLanguage(parseLangFromLocalStorage("secondaryLanguage", false));
   }, []);
 
-  const [width, setWindowWidth] = useState(0);
+  const [width, setWindowWidth] = useState(window.innerWidth);
+  const [screenSize, setScreenSize] = useState<ScreenSize>(
+    screenSizeFunction(width)
+  );
+  const [isMobile, setIsMobile] = useState(isMobileScreen(screenSize));
 
   const context: AppContextState = {
     screen: {
-      screenSize: screenSizeFunction(width),
-      screenWidth: width,
+      screenSize: screenSizeFunction(window.innerWidth),
+      screenWidth: window.innerWidth,
+      isMobile: isMobileScreen(screenSizeFunction(window.innerWidth)),
     },
     language: {
       primaryLanguage: primaryLanguage,
@@ -130,8 +142,8 @@ const ContextProvider = ({
   }, []);
 
   const updateDimensions = () => {
-    const width = window.innerWidth;
-    setWindowWidth(width);
+    const currentWidth = window.innerWidth;
+    setWindowWidth(currentWidth);
   };
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
