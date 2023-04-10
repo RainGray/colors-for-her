@@ -6,13 +6,15 @@ export function LanguageSwitcher(): JSX.Element {
 
   const app = useAppContext();
 
+  const borderWidth = app.screen.isMobile ? 0 : 1;
+
   return (
     <div
       className="row"
       style={{
         borderStyle: "solid",
         borderRadius: 10,
-        borderWidth: 1,
+        borderWidth: borderWidth,
         padding: 0,
         margin: "1px 20px",
         height: "auto",
