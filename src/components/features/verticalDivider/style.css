@@ -21,8 +21,26 @@
   font-size: 40px;
   padding: 0px 20px;
   min-width: 216px;
-  max-width: 50%;
+  max-width: 20%;
   /* margin: 34px 0px auto; */
+}
+
+.side-element {
+  width: 40%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  padding: 10;
+}
+
+.side-element-left {
+  justify-content: end;
+  text-align: right;
+}
+
+.side-element-right {
+  justify-content: start;
+  text-align: left;
 }
 
 .middle-element:first-child {

@@ -1,6 +1,7 @@
 .App {
   color: var(--color-primary-4);
   background-color: var(--color-secondary-1-0);
+  font-size: 18px;
 }
 
 .container {

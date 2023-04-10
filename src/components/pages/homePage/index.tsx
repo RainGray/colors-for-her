@@ -11,56 +11,36 @@ import "./style.css";
 export const HomePage = (): JSX.Element => {
   const app = useAppContext();
 
-  const PrimLangIntro: JSX.Element = (
-    <div className="article-column article-column-left">
-      {HomeArticleIntro(app.language.primaryLanguage)}
-    </div>
-  );
-  const SecLangIntro: JSX.Element = (
-    <div className="article-column article-column-right">
-      {HomeArticleIntro(app.language.secondaryLanguage)}
-    </div>
-  );
-
-  const PrimLangFlagButtons: JSX.Element = (
-    <div className="article-column article-column-left">
-      {HomeArticleLangSwitch(app.language.primaryLanguage)}
-    </div>
-  );
-  const SecLangFlagButtons: JSX.Element = (
-    <div className="article-column article-column-right">
-      {HomeArticleLangSwitch(app.language.secondaryLanguage)}
-    </div>
-  );
-
-  const PrimLangAppName: JSX.Element = (
-    <div className="article-column article-column-left">
-      {HomeArticleAppName(app.language.primaryLanguage)}
-    </div>
-  );
-  const SecLangAppName: JSX.Element = (
-    <div className="article-column article-column-right">
-      {HomeArticleAppName(app.language.secondaryLanguage)}
-    </div>
-  );
-
-  return (
-    <div className="home-page-content">
-      <VerticalDividerContainer
-        leftOption={PrimLangIntro}
-        rightOption={SecLangIntro}
-        middleElement={HelloText()}
-      />
-      <VerticalDividerContainer
-        leftOption={PrimLangFlagButtons}
-        rightOption={SecLangFlagButtons}
-        middleElement={LangEmoji}
-      />
-      <VerticalDividerContainer
-        leftOption={PrimLangAppName}
-        rightOption={SecLangAppName}
-        middleElement={PronounButtons()}
-      />
-    </div>
-  );
+  if (app.screen.isMobile) {
+    return (
+      <div className="home-page-content" style={{ padding: "0px 20px" }}>
+        <HelloText />
+        {HomeArticleIntro(app.language.primaryLanguage)}
+        {LangEmoji}
+        {HomeArticleLangSwitch(app.language.primaryLanguage)}
+        <PronounButtons />
+        {HomeArticleAppName(app.language.primaryLanguage)}
+      </div>
+    );
+  } else {
+    return (
+      <div className="home-page-content">
+        <VerticalDividerContainer
+          leftOption={HomeArticleIntro(app.language.primaryLanguage)}
+          rightOption={HomeArticleIntro(app.language.secondaryLanguage)}
+          middleElement={HelloText()}
+        />
+        <VerticalDividerContainer
+          leftOption={HomeArticleLangSwitch(app.language.primaryLanguage)}
+          rightOption={HomeArticleLangSwitch(app.language.secondaryLanguage)}
+          middleElement={LangEmoji}
+        />
+        <VerticalDividerContainer
+          leftOption={HomeArticleAppName(app.language.primaryLanguage)}
+          rightOption={HomeArticleAppName(app.language.secondaryLanguage)}
+          middleElement={PronounButtons()}
+        />
+      </div>
+    );
+  }
 };

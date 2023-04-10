@@ -8,9 +8,11 @@ export function VerticalDividerContainer(props: {
   return (
     <div className="divider-body">
       <div className="row" style={{ alignItems: "start" }}>
-        {props.leftOption}
+        <div className="side-element side-element-left">{props.leftOption}</div>
         <div className="middle-element">{props.middleElement}</div>
-        {props.rightOption}
+        <div className="side-element side-element-right">
+          {props.rightOption}
+        </div>
       </div>
     </div>
   );
