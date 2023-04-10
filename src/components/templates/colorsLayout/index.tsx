@@ -5,7 +5,7 @@ import { useAppContext } from "../../../support/context/appContextProvider";
 export function ColorsLayout(): JSX.Element {
   const app = useAppContext();
   return (
-    <div className="layout">
+    <div className="section-layout">
       {app.screen.isMobile ? <></> : <ColorCardMenu />}
       <Outlet />
     </div>

@@ -6,7 +6,7 @@ import { ScreenSize } from "../../../models";
 export function AnimalsLayout(): JSX.Element {
   const app = useAppContext();
   return (
-    <div className="layout">
+    <div className="section-layout">
       {app.screen.isMobile ? <></> : <AnimalsCardMenu />}
       <Outlet />
     </div>
